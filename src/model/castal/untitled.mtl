@@ -1,0 +1,480 @@
+# Blender MTL File: 'None'
+# Material Count: 40
+
+newmtl 09_-_Default
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\04) 3DModel\\04) Projects\\3M_Proj2_Student_Name_01\\Textures\\BUMP\\Wood tileable BUMP.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\04) 3DModel\\04) Projects\\3M_Proj2_Student_Name_01\\Textures\\PNG,JPG\\Wood tileable.jpg
+
+newmtl 10_-_Default
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\04) 3DModel\\04) Projects\\3M_Proj2_Student_Name_01\\Textures\\BUMP\\Wood tileable CUT BUMP.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\04) 3DModel\\04) Projects\\3M_Proj2_Student_Name_01\\Textures\\PNG,JPG\\Wood tileable CUT.jpg
+
+newmtl 16_-_Default
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.300000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\04) 3DModel\\04) Projects\\3M_Proj2_Student_Name_01\\Textures\\BUMP\\Wood tileable CUT BUMP.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\04) 3DModel\\04) Projects\\3M_Proj2_Student_Name_01\\Textures\\PNG,JPG\\Wood tileable CUT (M).jpg
+
+newmtl 21_-_Default
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.100000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\04) 3DModel\\04) Projects\\3M_Proj2_Student_Name_01\\Textures\\BUMP\\Wood tileable BUMP.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\04) 3DModel\\04) Projects\\3M_Proj2_Student_Name_01\\Textures\\PNG,JPG\\Wood tileable (D).jpg
+
+newmtl None
+Ns 500
+Ka 0.8 0.8 0.8
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+
+newmtl backwindow
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\castle back window bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\castle back window.jpg
+map_Ks C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\castle back window specular.jpg
+map_Ns C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\castle back window specular.jpg
+
+newmtl backwindow2
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.300000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\castle back window 2 bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\castle back window 2.jpg
+map_Ks C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\castle back window 2 opacity.jpg
+map_Ns C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\castle back window 2 opacity.jpg
+
+newmtl balcony_backdrop
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\balcony backdrop bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\balcony backdrop.jpg
+map_Ks C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\balcony backdrop bump specular.jpg
+
+newmtl bark
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.300000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\tree bark bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\tree bark.jpg
+
+newmtl black
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\black.png
+map_d C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\black.png
+
+newmtl brick_molding
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Brick Lower molding.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Brick Lower molding.jpg
+
+newmtl castle
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Brick Lower bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Brick Lower.jpg
+map_Ks C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Brick Lower bump.jpg
+
+newmtl cement
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.100000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\StoneCement.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\StoneCement.jpg
+
+newmtl clock
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\clockface.jpg
+
+newmtl cobblestone_squares
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.500000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Cobblestone squares bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Cobblestone squares.jpg
+
+newmtl curtain
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\curtain.png
+map_d C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\curtain.png
+
+newmtl dirt
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\dirt.jpg
+
+newmtl front_window
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.200000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\front window bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\front window.jpg
+
+newmtl gold
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\gold texture.jpg
+map_Ks C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\gold texture specular.jpg
+map_Ns C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\gold texture specular.jpg
+
+newmtl grass
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\grass.jpg
+
+newmtl grassdirt
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\grasstransitiondirt.jpg
+
+newmtl house_brick
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Brick Lower bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\house brick.jpg
+map_Ks C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Brick Lower bump.jpg
+
+newmtl leaves
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.300000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\leaves bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\leaves.jpg
+map_Ns C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\leaves bump.jpg
+
+newmtl path
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\dirt path.jpg
+
+newmtl pine_leaves
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\pine tree leaves.jpg
+
+newmtl railing
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Railing.jpg
+map_d C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Railing opacity.jpg
+
+newmtl railing_detail
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Railing detail.jpg
+
+newmtl roof_gold
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\roof gold specular.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\roof gold.jpg
+map_Ks C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\roof gold specular.jpg
+
+newmtl roof_molding_detail
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\roof molding detail.png
+map_d C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\roof molding detail.png
+
+newmtl roof_shingles
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.300000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\roof gold specular.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Roof shingles.jpg
+map_Ks C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\roof gold specular.jpg
+
+newmtl stairs_white
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\stairs white bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\stairs white.jpg
+
+newmtl stairs_wood
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\stairs wood bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\stairs wood.jpg
+
+newmtl stucco
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.500000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\generic bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Stucco.jpg
+
+newmtl stucco_detail
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.250000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\generic bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Stucco Detail.jpg
+
+newmtl stucco_detail.001
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.250000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\generic bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Stucco Detail.jpg
+
+newmtl stucco_detail.002
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump -bm 0.250000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\generic bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Stucco Detail.jpg
+
+newmtl stucco_detail_molding
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Stucco Detail molding.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Castle Stucco Detail molding.jpg
+
+newmtl water
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd -o -9.500000 -4.500000 0.000000 -s 0.050000 0.100000 1.000000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\water.jpg
+
+newmtl water.001
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588235 0.588235 0.588235
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd -o -9.500000 -4.500000 0.000000 -s 0.050000 0.100000 1.000000 C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\water.jpg
+
+newmtl wood_planks
+Ns 20.000006
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Wood tileable bump.jpg
+map_Kd C:\\Users\\t0983\\Desktop\\side project\\font-end\\webxr\\src\\model\\disney-cinderella-castle-joseph-starnault\\textures\\Wood tileable.jpg
