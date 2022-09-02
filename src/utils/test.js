@@ -169,7 +169,8 @@ export default class Three{
     loadModels(){
         this.modelmesh = []
         this.modelbody = []
-        let url = './src/model/'   
+        // let url = './src/model/'   
+        let url = 'https://tony0831-l.github.io/VR-test/src/model/'
         this.modelLoader(url+'women/',{x:1,y:1,z:1},{x: 1.9,y:0,z:-3.2},{},true);
         this.testLoader(url+'store/',{x:1,y:1,z:1},{x:0,y:0,z:0},{},true);
         // this.testLoader(url+'classroom/',{x:1,y:1,z:1},{x:0,y:0,z:0},{},true);
