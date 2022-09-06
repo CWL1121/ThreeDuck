@@ -5,34 +5,32 @@ import { PointerLockControlsCannon } from './libs/PointerLockControlsCannon.js'
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import Stats from 'https://unpkg.com/three@0.122.0/examples/jsm/libs/stats.module.js'
 import { threeToCannon, ShapeType } from 'three-to-cannon';
-import { Vec3 } from 'cannon-es'
+import { Vec3 } from 'cannon-es';
+import {THREEx} from 'threex.domevents';
 
 export default class Three{
     constructor(){
         this.init()
     }
+
     init(){
+        this.isNpc = false
+        this.timeStep = 1 / 60
+        this.lastCallTime = performance.now()
 
-      this.timeStep = 1 / 60
-      this.lastCallTime = performance.now()
-      this.balls = []
-      this.ballMeshes = []
-      this.boxes = []
-      this.boxMeshes = []
+        this.app = document.getElementById('app');
+        this.instructions = document.getElementById('instructions');
+        this.blocker = document.getElementById('blocker');
+        this.crossHair = document.getElementById('cross');
+        this.crossHair.style.display = 'none'
 
-      this.instructions = document.getElementById('instructions');
-      this.blocker = document.getElementById('blocker');
-      this.crossHair = document.getElementById('cross');
-      this.crossHair.style.display = 'none'
-      
-
-      this.initThree()
-      this.loadModels()
-      this.initCannon()
-      this.initPointerLock()
-      this.addWall()
-      this.animate()
-      this.setVRContorl()
+        this.initThree()
+        this.loadModels()
+        this.initCannon()
+        this.initPointerLock()
+        this.addWall()
+        this.setVRContorl()
+        this.animate()
     }
 
     initThree() {
@@ -48,12 +46,12 @@ export default class Three{
 
         document.body.appendChild(this.renderer.domElement)
 
+
         // Stats.js
         this.stats = new Stats()
         document.body.appendChild(this.stats.dom)
 
-        // Lights
-        let light = new THREE.AmbientLight(  0xffffff , 1 ); 
+        let light = new THREE.AmbientLight(  0xE0FFFF , 1 ); 
         this.scene.add( light );
 
         light = new THREE.DirectionalLight(0xffffff, 1);
@@ -83,6 +81,7 @@ export default class Three{
     }
 
     initCannon() {
+        this.ray = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, 0 , -1 ), 0, 10 );
         this.world = new CANNON.World()
 
         // Tweak contact properties.
@@ -131,21 +130,13 @@ export default class Three{
         roofBody.position.set(0, 0, 10)
         // roofBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0)
         console.log(roofBody.position)
-        // this.world.addBody(roofBody)
-
-
-        // Returns a vector pointing the the diretion the camera is at
-        function getShootDirection() {
-            const vector = new THREE.Vector3(0, 0, 1)
-            vector.unproject(camera)
-            const ray = new THREE.Ray(sphereBody.position, vector.sub(sphereBody.position).normalize())
-            return ray.direction
-        }
+        // this.world.addBody(roofBody) 
     }
 
     initPointerLock() {
         this.controls = new PointerLockControlsCannon(this.camera, this.sphereBody )
         this.scene.add(this.controls.getObject())
+        this.position = this.controls.getObject().position
 
         this.instructions.addEventListener('click', () => {
             this.controls.lock()
@@ -167,12 +158,11 @@ export default class Three{
     }
 
     loadModels(){
-        this.modelmesh = []
-        this.modelbody = []
-        // let url = './src/model/'   
-        let url = 'https://tony0831-l.github.io/cannon-vr/src/model/'
+        this.npc = [];
+        let url = './src/model/'   
+        // let url = 'https://tony0831-l.github.io/cannon-vr/src/model/'
         this.modelLoader(url+'women/',{x:1,y:1,z:1},{x: 1.9,y:0,z:-3.2},{},true);
-        this.testLoader(url+'store/',{x:1,y:1,z:1},{x:0,y:0,z:0},{},true);
+        this.modelLoader(url+'store/',{x:1,y:1,z:1},{x:0,y:0,z:0},{},false);
         // this.testLoader(url+'classroom/',{x:1,y:1,z:1},{x:0,y:0,z:0},{},true);
         // this.testLoader(url+'lobby/',{x:1,y:1,z:1},{x:0,y:-2.7,z:0},{},true);
         // this.testLoader(url+'castal/',{x:20,y:20,z:20},{x:0,y:0,z:0},{},true)
@@ -202,63 +192,17 @@ export default class Three{
             if(add){
                 let result = threeToCannon(gltf.scene,{type: ShapeType.BOX});
                 let obj = new CANNON.Body();
-                obj.position = (gltf.scene.position)
-                obj.addShape(result.shape,result.offset,result.orientation)
-                // console.log(obj)
-                this.world.addBody(obj)
+                obj.position = (gltf.scene.position);
+                obj.addShape(result.shape,result.offset,result.orientation);
+                this.npc.push( gltf.scene );
+                this.world.addBody(obj);
             }
         },(xhr)=>{
         },(error)=>{
             console.log(error)
         })
     }
-    testLoader(path,size,position,rotate,add){
-        this.loader = new GLTFLoader().setPath(path);
-        this.loader.load('scene.glb',
-        (gltf)=>{
-            gltf.scene.scale.set(size.x,size.y,size.z);
-            gltf.scene.position.set(position.x,position.y,position.z);
-            this.scene.add(gltf.scene);
-            if(add){
-                gltf.scene.children.forEach(element => {
-                    // if (element.name == 'woodBase' || element.name == 'wall' || element.name == 'wall010'|| element.name == 'windows' || element.name =='beams' || element.name =='woodBase') {
-                    //     console.log(element)
-                    //     let result = threeToCannon(element,{type: ShapeType.MESH});
-                    //     let obj = new CANNON.Body();
-                    //     obj.position = (element.position)
-                    //     obj.addShape(result.shape,result.offset,result.orientation)
-                    //     console.log(obj)
-                    //     obj.name = element.name
-                    //     this.world.addBody(obj)
-                    //     console.log(this.world)
-                    //     console.log("in:"+element.name)
-                    // }else{
-                    //     console.log("out:"+element.name)
-                    // }
-                    element.children.forEach(element => {
-                        element.children.forEach(element => {
-                            if (element.name == 'Object_5' || element.name == 'Object_13' || element.name == 'chao_wei_01' || element.name == 'woodBase') {
-                                let result = threeToCannon(element,{type: ShapeType.BOX});
-                                let obj = new CANNON.Body();
-                                obj.position = (element.position)
-                                obj.addShape(result.shape,result.offset,result.orientation)
-                                console.log(obj)
-                                obj.name = element.name
-                                this.world.addBody(obj)
-                                console.log(this.world)
-                                console.log("in:"+element.name)
-                            }else{
-                                console.log("out:"+element.name)
-                            }
-                        });
-                    });
-                });
-            }
-        },(xhr)=>{
-        },(error)=>{
-            console.log(error)
-        })
-    }
+
     addWall(){
         let three = this
         function add1(){
@@ -472,7 +416,7 @@ export default class Three{
             three.scene.add(boxMesh)
         }
         function add11(){
-            const halfExtents = new Vec3(10,.01,10)
+            const halfExtents = new Vec3(15,.001,15)
             const xy = new Vec3(0,4,0)
             const boxShape = new CANNON.Box(halfExtents)
             const boxBody = new CANNON.Body({ mass: 0 })
@@ -526,20 +470,65 @@ export default class Three{
         add11();
         add12();
     }
-    animate() {
-        // console.log(this.scene)
-        this.renderer.setAnimationLoop( this.animate.bind((this)) );
-        console.log(this.controls.getObject().position)
-        const time = performance.now() / 1000
-        const dt = time - this.lastCallTime
-        this.lastCallTime = time
 
-        if (this.controls.enabled) {
-            this.world.step(this.timeStep, dt)
+    getShootDirection() {
+        const vector = new THREE.Vector3(0, 0, 1)
+        vector.unproject(this.camera)
+        const ray = new THREE.Ray(this.sphereBody.position, vector.sub(this.sphereBody.position).normalize())
+        return ray.direction
+    }
+
+    npcEventHandler(){
+        console.log("inn")
+        this.isNpc = true ;
+        let control = this.controls
+        let camera = this.camera
+        function stop(){
+            console.log("stop")
+            camera.zoom = 10
+            control.disconnectMove()
         }
+        document.addEventListener('click',stop,false)
+        setTimeout(()=>{
+            document.removeEventListener('click',stop)
+            control.connectMove()
+            this.isNpc = false ;
+        },4000)
+    }
 
-        this.controls.update(dt)
+    render(){
         this.renderer.render(this.scene, this.camera)
+    }
+
+    animate() {
+        this.renderer.setAnimationLoop( this.animate.bind((this)) );
+        if(this.controls.enabled == true){
+            // console.log(this.getShootDirection())
+            this.renderer.setAnimationLoop( this.animate.bind((this)) );
+            // console.log(this.controls.getObject().position)
+            this.ray.ray.origin.copy( this.controls.getObject().position );
+            this.ray.ray.direction.copy(this.getShootDirection())
+            this.intersections = this.ray.intersectObjects( this.npc , true );
+            if (this.intersections.length>0 && !this.isNpc) {
+                this.npcEventHandler()
+            }else{
+                
+            }
+            const time = performance.now() / 1000
+            const dt = time - this.lastCallTime
+            this.lastCallTime = time
+    
+            if (this.controls.enabled) {
+                this.world.step(this.timeStep, dt)
+            }
+    
+            this.controls.update(dt)
+        }
         this.stats.update()
+        this.render()
+    }
+
+    getObj(){
+        return this
     }
 }

@@ -2,6 +2,7 @@
 
 #app {
   position: absolute;
+  /* z-index: -1; */
 }
 
 #blocker{

@@ -9,13 +9,14 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
   constructor(camera, cannonBody) {
     super()
 
+    this.stop = false;
     this.enabled = false
 
     this.cannonBody = cannonBody
 
     // var eyeYPos = 2 // eyes are 2 meters above the ground
-    this.velocityFactor = 0.2
-    this.jumpVelocity = 20
+    this.velocityFactor = 3
+    this.jumpVelocity = 15
 
     this.pitchObject = new THREE.Object3D()
     this.pitchObject.add(camera)
@@ -81,6 +82,21 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     document.removeEventListener('pointerlockerror', this.onPointerlockError)
     document.removeEventListener('keydown', this.onKeyDown)
     document.removeEventListener('keyup', this.onKeyUp)
+  }
+
+  disconnectMove(){
+    this.stop = true;
+    document.removeEventListener('pointerlockchange', this.onPointerlockChange)
+    document.removeEventListener('pointerlockerror', this.onPointerlockError)
+    document.removeEventListener('keydown', this.onKeyDown)
+    document.removeEventListener('keyup', this.onKeyUp)
+  }
+
+  connectMove(){
+    document.addEventListener('pointerlockchange', this.onPointerlockChange)
+    document.addEventListener('pointerlockerror', this.onPointerlockError)
+    document.addEventListener('keydown', this.onKeyDown)
+    document.addEventListener('keyup', this.onKeyUp)
   }
 
   dispose() {
@@ -190,9 +206,19 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
   }
 
   update(delta) {
+    if(this.stop){
+      // console.log("stop")
+      this.velocity.x = 0;
+      this.velocity.z = 0;
+      // console.log(this.inputVelocity)
+      this.stop = false;
+    }
     if (this.enabled === false) {
       return
     }
+
+    this.velocity.x = 0.25*this.velocity.x;
+    this.velocity.z = 0.25*this.velocity.z;
 
     delta *= 1000
     delta *= 0.1
@@ -223,6 +249,14 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     // Add to the object
     this.velocity.x += this.inputVelocity.x
     this.velocity.z += this.inputVelocity.z
+    
+    if (Math.abs(this.inputVelocity.x) >= 5) {
+      this.inputVelocity.x = 0;
+    }
+
+    if (Math.abs(this.inputVelocity.z) >= 5) {
+      this.inputVelocity.z = 0;
+    }
 
     this.yawObject.position.copy(this.cannonBody.position)
   }

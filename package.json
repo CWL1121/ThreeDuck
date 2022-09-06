@@ -10,6 +10,7 @@
     "cannon-es": "^0.20.0",
     "three": "^0.144.0",
     "three-to-cannon": "^4.2.0",
+    "threex.domevents": "^1.0.1",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3"
   },
