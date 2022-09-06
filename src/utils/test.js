@@ -19,10 +19,12 @@ export default class Three{
         this.lastCallTime = performance.now()
 
         this.app = document.getElementById('app');
+        this.dialoge = document.getElementById('dialoge');
         this.instructions = document.getElementById('instructions');
         this.blocker = document.getElementById('blocker');
         this.crossHair = document.getElementById('cross');
-        this.crossHair.style.display = 'none'
+        this.crossHair.style.display = 'none' ; 
+        this.dialoge.style.display = 'none' ;
 
         this.initThree()
         this.loadModels()
@@ -481,18 +483,24 @@ export default class Three{
     npcEventHandler(){
         console.log("inn")
         this.isNpc = true ;
-        let control = this.controls
-        let camera = this.camera
+        let control = this.controls ;
+        let camera = this.camera ;
+        let dialoge = this.dialoge ;
+        let cross = this.crossHair;
         function stop(){
-            console.log("stop")
-            camera.zoom = 10
-            control.disconnectMove()
+            console.log("stop") ;
+            camera.zoom = 10 ; 
+            control.disconnectMove() ;
+            dialoge.style.display = null ;
+            cross.style.display = 'none' ;
         }
         document.addEventListener('click',stop,false)
         setTimeout(()=>{
             document.removeEventListener('click',stop)
             control.connectMove()
             this.isNpc = false ;
+            dialoge.style.display = 'none' ;
+            cross.style.display = null ;
         },4000)
     }
 
