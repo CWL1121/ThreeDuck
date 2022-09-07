@@ -21,6 +21,7 @@ export default {
     color: white;
 }
 .row{
+    font: 1rem sans-serif;
     position:absolute;
     width: 10px;
     height: 2px;

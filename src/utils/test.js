@@ -24,8 +24,9 @@ export default class Three{
         this.crossHair = document.getElementById('cross');
         this.canvas = document.getElementsByTagName('canvas');
         this.exitBut = document.getElementById('button');
-        this.progressContainer = document.getElementById('container')
-        this.progress = document.getElementById('progress')
+        this.progressContainer = document.getElementById('container');
+        this.progress = document.getElementById('progress');
+        this.label = document.getElementById('label');
 
         this.crossHair.style.display = 'none' ; 
         this.dialoge.style.display = 'none' ;
@@ -199,7 +200,7 @@ export default class Three{
         }
         this.loadingManger.onProgress = ( url, itemsLoaded, itemsTotal )=> {
             this.progress.value = (itemsLoaded / itemsTotal * 100)
-            console.log( (itemsLoaded / itemsTotal * 100 ) + '% loaded' );
+            this.label.innerText = ((itemsLoaded / itemsTotal * 100 ) + "%  loading:"+ url );
         };
         this.loadingManger.onLoad = ()=>{
             this.progressContainer.style.display = "none";
