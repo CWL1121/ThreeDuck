@@ -24,11 +24,14 @@ export default class Three{
         this.crossHair = document.getElementById('cross');
         this.canvas = document.getElementsByTagName('canvas');
         this.exitBut = document.getElementById('button');
+        this.progressContainer = document.getElementById('container')
+        this.progress = document.getElementById('progress')
 
         this.crossHair.style.display = 'none' ; 
         this.dialoge.style.display = 'none' ;
 
         this.initThree()
+        this.Manger()
         this.loadModels()
         this.initCannon()
         this.initPointerLock()
@@ -189,8 +192,23 @@ export default class Three{
         )
     }
 
+    Manger(){
+        this.loadingManger = new THREE.LoadingManager()
+        this.loadingManger.onStart = ()=>{
+            this.instructions.style.display = 'none'
+        }
+        this.loadingManger.onProgress = ( url, itemsLoaded, itemsTotal )=> {
+            this.progress.value = (itemsLoaded / itemsTotal * 100)
+            console.log( (itemsLoaded / itemsTotal * 100 ) + '% loaded' );
+        };
+        this.loadingManger.onLoad = ()=>{
+            this.progressContainer.style.display = "none";
+            this.instructions.style.display = null ;
+        }
+    }
+
     modelLoader(path,size,position,rotate,add){
-        this.loader = new GLTFLoader().setPath(path);
+        this.loader = new GLTFLoader(this.loadingManger).setPath(path);
         this.loader.load('scene.glb',
         (gltf)=>{
             gltf.scene.scale.set(size.x,size.y,size.z);

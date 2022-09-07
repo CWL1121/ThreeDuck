@@ -1,6 +1,7 @@
 <template>
     <cross/>
     <dialoge/>
+    <progressBar/>
     <div id="blocker">
       <div id="instructions">
         <p>
@@ -14,9 +15,10 @@
     import test from '../utils/test.js'
     import cross from '../components/crosshair.vue'
     import dialoge from '../components/dialoge.vue'
+    import progressBar from '../components/progress.vue'
     export default{
       components:{
-        cross,dialoge
+        cross,dialoge,progressBar
       },
       setup(){
         let obj,pos
