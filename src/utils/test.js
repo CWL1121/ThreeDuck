@@ -6,7 +6,6 @@ import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import Stats from 'https://unpkg.com/three@0.122.0/examples/jsm/libs/stats.module.js'
 import { threeToCannon, ShapeType } from 'three-to-cannon';
 import { Vec3 } from 'cannon-es';
-import {THREEx} from 'threex.domevents';
 
 export default class Three{
     constructor(){
@@ -14,7 +13,7 @@ export default class Three{
     }
 
     init(){
-        this.isNpc = false
+        this.isNpc = false ;
         this.timeStep = 1 / 60
         this.lastCallTime = performance.now()
 
@@ -23,6 +22,9 @@ export default class Three{
         this.instructions = document.getElementById('instructions');
         this.blocker = document.getElementById('blocker');
         this.crossHair = document.getElementById('cross');
+        this.canvas = document.getElementsByTagName('canvas');
+        this.exitBut = document.getElementById('button');
+
         this.crossHair.style.display = 'none' ; 
         this.dialoge.style.display = 'none' ;
 
@@ -44,6 +46,7 @@ export default class Three{
 
         // Renderer
         this.renderer = new THREE.WebGLRenderer({ antialias: true })
+        // this.renderer = new CSS3DRenderer({ antialias: true })
         this.renderer.setSize(window.innerWidth, window.innerHeight)
 
         document.body.appendChild(this.renderer.domElement)
@@ -152,9 +155,11 @@ export default class Three{
         })
 
         this.controls.addEventListener('unlock', () => {
-            this.controls.enabled = false
-            this.instructions.style.display = null
-            this.blocker.style.display = null
+            if (!this.isNpc) {
+                this.controls.enabled = false
+                this.instructions.style.display = null
+                this.blocker.style.display = null
+            }
             this.crossHair.style.display = 'none'
         })
     }
@@ -215,18 +220,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add2(){
             const halfExtents = new Vec3(.1,3,10)
@@ -236,18 +229,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add3(){
             const halfExtents = new Vec3(.1,3,6)
@@ -257,18 +238,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add4(){
             const halfExtents = new Vec3(3.5,3,.1)
@@ -278,18 +247,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add5(){
             const halfExtents = new Vec3(.1,3,1.4)
@@ -299,18 +256,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add6(){
             const halfExtents = new Vec3(5,3,.1)
@@ -320,18 +265,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add7(){
             const halfExtents = new Vec3(3.5,3,.1)
@@ -341,18 +274,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add8(){
             const halfExtents = new Vec3(.1,3,6)
@@ -362,18 +283,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add9(){
             const halfExtents = new Vec3(.1,3,10)
@@ -383,18 +292,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add10(){
             const halfExtents = new Vec3(.1,3,3)
@@ -404,18 +301,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add11(){
             const halfExtents = new Vec3(15,.001,15)
@@ -425,18 +310,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         function add12(){
             const halfExtents = new Vec3(3.5,3,.1)
@@ -446,18 +319,6 @@ export default class Three{
             boxBody.addShape(boxShape)
             boxBody.position = xy
             three.world.addBody(boxBody)
-    
-            const boxGeometry = new THREE.BoxGeometry(
-                halfExtents.x * 2,
-                halfExtents.y * 2,
-                halfExtents.z * 2
-            )
-            const boxMaterial = new THREE.MeshLambertMaterial({
-                color: Math.random() * 0xffffff
-              })
-            const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
-            boxMesh.position.set(xy.x,xy.y,xy.z)
-            three.scene.add(boxMesh)
         }
         add1();
         add2();
@@ -480,56 +341,73 @@ export default class Three{
         return ray.direction
     }
 
-    npcEventHandler(){
-        console.log("inn")
-        this.isNpc = true ;
-        let control = this.controls ;
-        let camera = this.camera ;
-        let dialoge = this.dialoge ;
-        let cross = this.crossHair;
-        function stop(){
-            console.log("stop") ;
-            camera.zoom = 10 ; 
-            control.disconnectMove() ;
-            dialoge.style.display = null ;
-            cross.style.display = 'none' ;
-        }
-        document.addEventListener('click',stop,false)
-        setTimeout(()=>{
-            document.removeEventListener('click',stop)
-            control.connectMove()
-            this.isNpc = false ;
-            dialoge.style.display = 'none' ;
-            cross.style.display = null ;
-        },4000)
-    }
-
     render(){
         this.renderer.render(this.scene, this.camera)
     }
 
     animate() {
         this.renderer.setAnimationLoop( this.animate.bind((this)) );
+        let MainCanvas = this.canvas.item(0)
         if(this.controls.enabled == true){
+
             // console.log(this.getShootDirection())
             this.renderer.setAnimationLoop( this.animate.bind((this)) );
             // console.log(this.controls.getObject().position)
+
             this.ray.ray.origin.copy( this.controls.getObject().position );
             this.ray.ray.direction.copy(this.getShootDirection())
             this.intersections = this.ray.intersectObjects( this.npc , true );
-            if (this.intersections.length>0 && !this.isNpc) {
-                this.npcEventHandler()
-            }else{
-                
+
+            let control = this.controls ;
+            let camera = this.camera ;
+            let dialoge = this.dialoge ;
+            let cross = this.crossHair;
+            let blocker = this.blocker;
+            function stop(){
+                console.log("stop") ;
+                camera.zoom = 10 ;
+                control.disconnect() 
+                control.unlock();
+                dialoge.style.display = null ;
+                blocker.style.display = 'none';
+                cross.style.display = 'none';
+                document.removeEventListener('click',stop)
             }
+            function remove(){
+                console.log("remove")
+                document.removeEventListener('click',stop)
+                control.connect() 
+                control.lock();
+                dialoge.style.display = 'none' ;
+                cross.style.display = null;
+                MainCanvas.focus()
+            }
+
+            if (this.intersections.length>0 &&this.intersections[0].distance<2 && !this.isNpc) {
+                this.isAddEvent = true;
+                this.isNpc = true ;
+                console.log("inn")
+                document.addEventListener('click',stop,false)
+                this.exitBut.addEventListener('click',()=>{
+                    console.log("exit");
+                    remove(this.isNpc) ;
+                    this.isNpc = false ;
+                    this.isAddEvent = true ;
+                },true)
+                setTimeout(()=>{
+                    document.removeEventListener('click',stop)
+                    this.isNpc = false ;
+                    this.isAddEvent = true ;
+                },200)
+            }else{
+
+            }
+
             const time = performance.now() / 1000
             const dt = time - this.lastCallTime
             this.lastCallTime = time
-    
-            if (this.controls.enabled) {
-                this.world.step(this.timeStep, dt)
-            }
-    
+
+            this.world.step(this.timeStep, dt)
             this.controls.update(dt)
         }
         this.stats.update()

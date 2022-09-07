@@ -1,16 +1,19 @@
 import * as THREE from 'three';
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 
 let camera, controls, scene, renderer;
 
 export default function init() {
 
+    document.getElementById('app').style.zIndex = -1;
     scene = new THREE.Scene();
     scene.background = new THREE.Color( 0xcccccc );
     scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
 
-    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer = new CSS3DRenderer( { antialias: true } );
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
@@ -68,6 +71,11 @@ export default function init() {
     //
 
     window.addEventListener( 'resize', onWindowResize );
+
+    document.body.appendChild( VRButton.createButton( renderer ) );
+    console.log(renderer.xr)
+    renderer.xr.enabled = true; 
+
     animate()
 }
 

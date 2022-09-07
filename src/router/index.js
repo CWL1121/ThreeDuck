@@ -12,6 +12,11 @@ const router = createRouter({
       path:"/orb",
       name:'orbtest',
       component:()=>import('../views/testOrb.vue')
+    },
+    {
+      path:"/test",
+      name:'test',
+      component:()=>import('../views/test.vue')
     }
   ]
 })

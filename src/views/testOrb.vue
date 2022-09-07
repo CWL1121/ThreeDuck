@@ -8,6 +8,8 @@
     import { onMounted } from '@vue/runtime-core';
     import * as THREE from 'three';
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+    import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+    import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 
     let camera, controls, scene, renderer;
 
@@ -17,6 +19,21 @@
     })
 
     function init() {
+
+        //  <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/c1603611-8396-42d4-8809-bb9ed3178372"></iframe>
+        const div = document.createElement( 'div' );
+        div.style.width = '350px';
+        div.style.height = '480px';
+        div.style.backgroundColor = '#000';
+
+        const iframe = document.createElement( 'iframe' );
+        iframe.style.width = '350px';
+        iframe.style.height = '480px';
+        iframe.style.border = '0px';
+        iframe.src = [ 'https://console.dialogflow.com/api-client/demo/embedded/c1603611-8396-42d4-8809-bb9ed3178372' ].join( '' );
+        div.appendChild( iframe );
+
+        const object = new CSS3DObject( div );
 
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xcccccc );
@@ -80,6 +97,9 @@
         scene.add( ambientLight );
 
         //
+
+        console.log(scene)
+        scene.add(object)
 
         window.addEventListener( 'resize', onWindowResize );
 

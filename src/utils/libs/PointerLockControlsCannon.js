@@ -8,14 +8,12 @@ import * as CANNON from '../../../node_modules/cannon-es/dist/cannon-es.js'
 class PointerLockControlsCannon extends THREE.EventDispatcher {
   constructor(camera, cannonBody) {
     super()
-
-    this.stop = false;
     this.enabled = false
 
     this.cannonBody = cannonBody
 
     // var eyeYPos = 2 // eyes are 2 meters above the ground
-    this.velocityFactor = 3
+    this.velocityFactor = 2
     this.jumpVelocity = 15
 
     this.pitchObject = new THREE.Object3D()
@@ -84,20 +82,6 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     document.removeEventListener('keyup', this.onKeyUp)
   }
 
-  disconnectMove(){
-    this.stop = true;
-    document.removeEventListener('pointerlockchange', this.onPointerlockChange)
-    document.removeEventListener('pointerlockerror', this.onPointerlockError)
-    document.removeEventListener('keydown', this.onKeyDown)
-    document.removeEventListener('keyup', this.onKeyUp)
-  }
-
-  connectMove(){
-    document.addEventListener('pointerlockchange', this.onPointerlockChange)
-    document.addEventListener('pointerlockerror', this.onPointerlockError)
-    document.addEventListener('keydown', this.onKeyDown)
-    document.addEventListener('keyup', this.onKeyUp)
-  }
 
   dispose() {
     this.disconnect()
@@ -206,16 +190,6 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
   }
 
   update(delta) {
-    if(this.stop){
-      // console.log("stop")
-      this.velocity.x = 0;
-      this.velocity.z = 0;
-      // console.log(this.inputVelocity)
-      this.stop = false;
-    }
-    if (this.enabled === false) {
-      return
-    }
 
     this.velocity.x = 0.25*this.velocity.x;
     this.velocity.z = 0.25*this.velocity.z;
