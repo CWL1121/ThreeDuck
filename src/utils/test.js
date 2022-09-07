@@ -170,8 +170,8 @@ export default class Three{
 
     loadModels(){
         this.npc = [];
-        let url = './src/model/'   
-        // let url = 'https://tony0831-l.github.io/cannon-vr/src/model/'
+        // let url = './src/model/'   
+        let url = 'https://tony0831-l.github.io/cannon-vr/src/model/'
         this.modelLoader(url+'women/',{x:1,y:1,z:1},{x: 1.9,y:0,z:-3.2},{},true);
         this.modelLoader(url+'store/',{x:1,y:1,z:1},{x:0,y:0,z:0},{},false);
         // this.testLoader(url+'classroom/',{x:1,y:1,z:1},{x:0,y:0,z:0},{},true);
