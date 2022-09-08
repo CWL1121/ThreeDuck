@@ -45,8 +45,13 @@ export default class Three{
         // Camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
         this.camera.position.set(0,0,0)
+
         // Scene
         this.scene = new THREE.Scene()
+
+        this.scene.background = new THREE.CubeTextureLoader()
+        .setPath( './src/assets/' )
+        .load( [ 'px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg' ] );
 
         // Renderer
         this.renderer = new THREE.WebGLRenderer({ antialias: true })
@@ -200,7 +205,7 @@ export default class Three{
         }
         this.loadingManger.onProgress = ( url, itemsLoaded, itemsTotal )=> {
             this.progress.value = (itemsLoaded / itemsTotal * 100)
-            this.label.innerText = ((itemsLoaded / itemsTotal * 100 ) + "%  loading:"+ url );
+            this.label.innerText = (((itemsLoaded / itemsTotal * 100 ).toFixed(2)) + "%  loading:"+ url );
         };
         this.loadingManger.onLoad = ()=>{
             this.progressContainer.style.display = "none";

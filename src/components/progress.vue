@@ -29,7 +29,7 @@ export default {
     #label{
         font: .7rem sans-serif;
     }
-    p{
+    #container p{
         font: 3rem sans-serif;
     }
     progress {
