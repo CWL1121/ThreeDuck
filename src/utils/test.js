@@ -49,8 +49,10 @@ export default class Three{
         // Scene
         this.scene = new THREE.Scene()
 
+        let url = 'https://tony0831-l.github.io/cannon-vr/src/assets/'
+        // let url = './src/assets/'
         this.scene.background = new THREE.CubeTextureLoader()
-        .setPath( './src/assets/' )
+        .setPath( url )
         .load( [ 'px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg' ] );
 
         // Renderer
