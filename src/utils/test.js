@@ -37,7 +37,7 @@ export default class Three{
 
         this.loadModels();
             
-        let url = './src/assets/'
+        let url = "https://cwl1121.github.io/ThreeDuck/src/assets/"
         this.scene.background = new THREE.CubeTextureLoader()
         .setPath( url )
         .load( [ 'px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg' ] );
@@ -49,7 +49,7 @@ export default class Three{
     }
 
     loadModels(){
-        let url = './src/model/'   
+        let url = "https://cwl1121.github.io/ThreeDuck/src/model/"   
         this.modelLoader(url+'fish/',{x:1,y:1,z:1},{x: 1.9,y:11,z:-3.2},{},true);
     }
     
