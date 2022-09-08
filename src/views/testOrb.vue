@@ -20,21 +20,6 @@
 
     function init() {
 
-        //  <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/c1603611-8396-42d4-8809-bb9ed3178372"></iframe>
-        const div = document.createElement( 'div' );
-        div.style.width = '350px';
-        div.style.height = '480px';
-        div.style.backgroundColor = '#000';
-
-        const iframe = document.createElement( 'iframe' );
-        iframe.style.width = '350px';
-        iframe.style.height = '480px';
-        iframe.style.border = '0px';
-        iframe.src = [ 'https://console.dialogflow.com/api-client/demo/embedded/c1603611-8396-42d4-8809-bb9ed3178372' ].join( '' );
-        div.appendChild( iframe );
-
-        const object = new CSS3DObject( div );
-
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0xcccccc );
         scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
@@ -99,7 +84,6 @@
         //
 
         console.log(scene)
-        scene.add(object)
 
         window.addEventListener( 'resize', onWindowResize );
 
